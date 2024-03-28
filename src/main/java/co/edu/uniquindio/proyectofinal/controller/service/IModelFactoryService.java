@@ -1,7 +1,7 @@
-package uniquindio.edu.co.proyectofinal.controller.service;
+package co.edu.uniquindio.proyectofinal.controller.service;
 
-import uniquindio.edu.co.proyectofinal.mapping.dto.UsuarioDto;
-import uniquindio.edu.co.proyectofinal.model.Usuario;
+import co.edu.uniquindio.proyectofinal.mapping.dto.UsuarioDto;
+import co.edu.uniquindio.proyectofinal.model.Usuario;
 
 import java.util.List;
 

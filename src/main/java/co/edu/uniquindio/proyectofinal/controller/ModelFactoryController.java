@@ -1,12 +1,20 @@
-package uniquindio.edu.co.proyectofinal.controller;
+package co.edu.uniquindio.proyectofinal.controller;
 
-import uniquindio.edu.co.proyectofinal.controller.service.IModelFactoryService;
-import uniquindio.edu.co.proyectofinal.mapping.dto.UsuarioDto;
-import uniquindio.edu.co.proyectofinal.model.Usuario;
+import co.edu.uniquindio.proyectofinal.controller.service.IModelFactoryService;
+import co.edu.uniquindio.proyectofinal.mapping.dto.UsuarioDto;
+import co.edu.uniquindio.proyectofinal.model.Usuario;
 
 import java.util.List;
 
 public class ModelFactoryController implements IModelFactoryService {
+
+    private static class SingletonHolder {
+        private final static ModelFactoryController eINSTANCE = new ModelFactoryController();
+    }
+
+    public static ModelFactoryController getInstance() {
+        return SingletonHolder.eINSTANCE;
+    }
     @Override
     public List<Usuario> obtenerUsuaio() {
         return null;

@@ -1,4 +1,4 @@
-package uniquindio.edu.co.proyectofinal;
+package co.edu.uniquindio.proyectofinal;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

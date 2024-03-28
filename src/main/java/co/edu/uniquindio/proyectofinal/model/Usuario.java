@@ -1,4 +1,4 @@
-package uniquindio.edu.co.proyectofinal.model;
+package co.edu.uniquindio.proyectofinal.model;
 
 import java.util.ArrayList;
 
@@ -21,5 +21,9 @@ public class Usuario extends Persona {
 
     public void setListaReservas(ArrayList<Reserva> listaReservas) {
         this.listaReservas = listaReservas;
+    }
+
+    public ArrayList<Reserva> getListaReservas() {
+        return listaReservas;
     }
 }
