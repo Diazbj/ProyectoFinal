@@ -6,6 +6,9 @@ public abstract class Persona {
     private String cedula;
     private String correo;
 
+    public Persona() {
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -29,4 +32,5 @@ public abstract class Persona {
     public void setCorreo(String correo) {
         this.correo = correo;
     }
+
 }

@@ -4,19 +4,19 @@ import java.util.ArrayList;
 
 public class Usuario extends Persona {
 
-    private int reserva;
+    ArrayList<Reserva> listaReservasAsociado = new ArrayList<>();
 
     ArrayList<Reserva> listaReservas=new ArrayList<>();
     public Usuario(){
 
     }
 
-    public int getReserva() {
-        return reserva;
+    public ArrayList<Reserva> getListaReservasAsociado() {
+        return listaReservasAsociado;
     }
 
-    public void setReserva(int reserva) {
-        this.reserva = reserva;
+    public void setListaReservasAsociado(ArrayList<Reserva> listaReservasAsociado) {
+        this.listaReservasAsociado = listaReservasAsociado;
     }
 
     public void setListaReservas(ArrayList<Reserva> listaReservas) {
