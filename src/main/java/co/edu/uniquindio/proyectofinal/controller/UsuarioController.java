@@ -13,7 +13,7 @@ public class UsuarioController implements IUsuarioControllerService {
 
 
     public List<UsuarioDto> obtenerusuarios() {
-        return modelFactoryController.obtenerUsuaio();
+        return modelFactoryController.obtenerUsuaios();
     }
 
     @Override
