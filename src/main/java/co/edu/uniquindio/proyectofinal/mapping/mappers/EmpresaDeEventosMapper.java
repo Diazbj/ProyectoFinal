@@ -1,6 +1,8 @@
 package co.edu.uniquindio.proyectofinal.mapping.mappers;
 
 import co.edu.uniquindio.proyectofinal.mapping.dto.UsuarioDto;
+import co.edu.uniquindio.proyectofinal.mapping.dto.EmpleadoDto;
+import co.edu.uniquindio.proyectofinal.model.Empleado;
 import co.edu.uniquindio.proyectofinal.model.EmpresaDeEventos;
 import co.edu.uniquindio.proyectofinal.model.Usuario;
 import org.mapstruct.IterableMapping;
@@ -15,7 +17,7 @@ import java.util.List;
 public interface EmpresaDeEventosMapper {
 
     EmpresaDeEventosMapper INSTANCE = Mappers.getMapper(EmpresaDeEventosMapper.class);
-
+//----------------------------------------------Usuario------------------------------------------------
     @Named("usuarioToUsuarioDto")
     UsuarioDto usuarioToUsuarioDto(Usuario usuario);
 
@@ -24,6 +26,15 @@ public interface EmpresaDeEventosMapper {
     @IterableMapping(qualifiedByName = "usuarioToUsuarioDto")
     List<UsuarioDto> getUsuarioDto(List<Usuario> listUsuarios);
 
+//----------------------------------------------Usuario-------------------------------------------------
 
+    //----------------------------------------Empleado--------------------------------------------------
+    @Named("empleadoToEmpleadoDto")
+    EmpleadoDto empleadoToEmpleadoDto(Empleado empleado);
 
+    Empleado empleadoDtoToEmpleado(EmpleadoDto empleadoDto);
+
+    @IterableMapping(qualifiedByName = "empleadoToEmpleadoDto")
+    List<EmpleadoDto> getEmpleadosDto(List<Empleado> listsEmpleados);
+//---------------------------------------------Empleado---------------------------------------------
 }

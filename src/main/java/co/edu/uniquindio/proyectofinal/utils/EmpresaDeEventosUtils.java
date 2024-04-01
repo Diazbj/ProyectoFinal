@@ -3,6 +3,7 @@ package co.edu.uniquindio.proyectofinal.utils;
 import co.edu.uniquindio.proyectofinal.model.EmpresaDeEventos;
 import co.edu.uniquindio.proyectofinal.model.Reserva;
 import co.edu.uniquindio.proyectofinal.model.Usuario;
+import co.edu.uniquindio.proyectofinal.model.Empleado;
 
 public class EmpresaDeEventosUtils {
     public static EmpresaDeEventos inicializarDatos() {
@@ -12,6 +13,12 @@ public class EmpresaDeEventosUtils {
         usuario.setNombre("Gonzalo");
         usuario.setCorreo("gonza@gmail.com");
         empresaDeEventos.getListaUsuarios().add(usuario);
+
+        Empleado empleado = new Empleado();
+        empleado.setCedula("12345");
+        empleado.setNombre("juan");
+        empleado.setCorreo("awdawd@gmail.com");
+        empresaDeEventos.getListaEmpleados().add(empleado);
 
 
 

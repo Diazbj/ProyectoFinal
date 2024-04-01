@@ -1,5 +1,6 @@
 package co.edu.uniquindio.proyectofinal.model;
 
+import co.edu.uniquindio.proyectofinal.exceptions.EmpleadoException;
 import co.edu.uniquindio.proyectofinal.exceptions.UsuarioException;
 import co.edu.uniquindio.proyectofinal.model.services.IEmpresaDeEventos;
 
@@ -50,6 +51,7 @@ public class EmpresaDeEventos implements IEmpresaDeEventos {
         this.listaReservas = listaReservas;
     }
 
+    //----------------------------------------------Usuario------------------------------------------------
     @Override
     public Usuario crearUsuario(String cedula, String nombre,String correo) throws UsuarioException {
         Usuario nuevoUsuario=null;
@@ -135,4 +137,96 @@ public class EmpresaDeEventos implements IEmpresaDeEventos {
     public ArrayList<Usuario> obtenerUsuarios() {
         return getListaUsuarios();
     }
+    //----------------------------------------------Usuario------------------------------------------------
+
+    //---------------------------------------------Empleado--------------------------------------------------
+    @Override
+    public Empleado crearEmpleado(String cedula, String nombre, String correo) throws EmpleadoException {
+        Empleado nuevoEmpleado = null;
+        boolean empleadoExiste = verificarEmpleadoExiste(cedula);
+        if (empleadoExiste){
+            throw new EmpleadoException("El empleado con ID: " + cedula + " ya existe.");
+        }else {
+            nuevoEmpleado = new Empleado();
+            nuevoEmpleado.setNombre(nombre);
+            nuevoEmpleado.setCedula(cedula);
+            nuevoEmpleado.setCorreo(correo);
+            getListaEmpleados().add(nuevoEmpleado);
+
+        }
+        return nuevoEmpleado;
+    }
+
+    public void agregarEmpleado(Empleado nuevoEmpleado) throws EmpleadoException{
+        getListaEmpleados().add(nuevoEmpleado);
+    }
+
+    @Override
+    public boolean actualizarEmpleado(String cedulaActual, Empleado empleado) throws EmpleadoException {
+        Empleado empleadoActual = obtenerEmpleado(cedulaActual);
+        if (empleadoActual == null){
+            throw  new EmpleadoException("El empleado a actualizar no existe");
+        }else{
+            empleadoActual.setNombre(empleado.getNombre());
+            empleadoActual.setCedula(empleado.getCedula());
+            empleadoActual.setCorreo(empleado.getCorreo());
+            return true;
+        }
+
+    }
+
+    @Override
+    public Boolean eliminarEmpleado(String cedula) throws EmpleadoException {
+        Empleado empleado = null;
+        boolean flagExiste = false;
+        empleado = obtenerEmpleado(cedula);
+        if (empleado == null)
+            throw  new EmpleadoException("El empleado a eliminar no existe");
+        else {
+            getListaEmpleados().remove(empleado);
+            flagExiste = true;
+        }
+        return flagExiste;
+    }
+
+
+
+    @Override
+    public boolean verificarEmpleadoExiste(String cedula) throws EmpleadoException {
+        if (empleadoExiste(cedula)){
+            throw new EmpleadoException("El empleado con cedula: " + cedula + " ya existe");
+        }else {
+            return false;
+        }
+
+    }
+
+    @Override
+    public Empleado obtenerEmpleado(String cedula) {
+        Empleado empleadoEncontrado = null;
+        for (Empleado empleado : getListaEmpleados()){
+            if (empleado.getCedula().equalsIgnoreCase(cedula)){
+                empleadoEncontrado = empleado;
+                break;
+            }
+        }
+        return empleadoEncontrado;
+    }
+
+    @Override
+    public ArrayList<Empleado> obtenerEmpleados() {
+        return getListaEmpleados();
+    }
+
+    public  boolean empleadoExiste(String cedula){
+        boolean empleadoEncontrado = false;
+        for (Empleado empleado : getListaEmpleados()){
+            if (empleado.getCedula().equalsIgnoreCase(cedula)){
+                empleadoEncontrado = true;
+                break;
+            }
+        }
+        return  empleadoEncontrado;
+    }
+    //---------------------------------------------Empleado--------------------------------------------------
 }

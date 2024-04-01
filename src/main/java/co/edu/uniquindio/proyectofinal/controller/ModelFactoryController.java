@@ -3,6 +3,7 @@ package co.edu.uniquindio.proyectofinal.controller;
 import co.edu.uniquindio.proyectofinal.controller.service.IModelFactoryService;
 import co.edu.uniquindio.proyectofinal.exceptions.EmpleadoException;
 import co.edu.uniquindio.proyectofinal.exceptions.UsuarioException;
+import co.edu.uniquindio.proyectofinal.mapping.dto.EmpleadoDto;
 import co.edu.uniquindio.proyectofinal.mapping.dto.UsuarioDto;
 import co.edu.uniquindio.proyectofinal.model.EmpresaDeEventos;
 import co.edu.uniquindio.proyectofinal.model.Usuario;
@@ -38,7 +39,7 @@ public class ModelFactoryController implements IModelFactoryService {
     public EmpresaDeEventos getEmpresaDeEventos(){return empresaDeEventos;}
 
     public void setEmpresaDeEventos(EmpresaDeEventos empresaDeEventos){this.empresaDeEventos=empresaDeEventos;}
-
+//---------------------------------------------Usuario--------------------------------------------------
     @Override
     public List<UsuarioDto> obtenerUsuaios() {
         return mapper.getUsuarioDto(empresaDeEventos.getListaUsuarios());
@@ -85,4 +86,52 @@ public class ModelFactoryController implements IModelFactoryService {
             return false;
         }
     }
+    //---------------------------------------------Usuario--------------------------------------------------
+
+    //---------------------------------------------Empleado--------------------------------------------------
+    @Override
+    public List<EmpleadoDto> obtenerEmpleados() {
+        return mapper.getEmpleadosDto(empresaDeEventos.getListaEmpleados());
+    }
+
+    @Override
+    public boolean agregarEmpleado(EmpleadoDto empleadoDto) {
+        try{
+            if (!empresaDeEventos.verificarEmpleadoExiste(empleadoDto.cedula())){
+                Empleado empleado = mapper.empleadoDtoToEmpleado(empleadoDto);
+                getEmpresaDeEventos().agregarEmpleado(empleado);
+
+            }
+            return true;
+        }catch (EmpleadoException e){
+            e.getMessage();
+            return false;
+        }
+    }
+
+    @Override
+    public boolean eliminarEmpleado(String cedula) {
+        boolean flagExiste = false;
+        try{
+            flagExiste = getEmpresaDeEventos().eliminarEmpleado(cedula);
+        }catch (EmpleadoException e){
+            e.printStackTrace();
+        }
+        return flagExiste;
+    }
+
+    @Override
+    public boolean actualizarEmpleado(String cedulaActual, EmpleadoDto empleadoDto) {
+        try{
+            Empleado empleado = mapper.empleadoDtoToEmpleado(empleadoDto);
+            getEmpresaDeEventos().actualizarEmpleado(cedulaActual, empleado);
+            return true;
+        }catch (EmpleadoException e){
+            e.printStackTrace();
+            return false;
+        }
+
+    }
+
+    //---------------------------------------------Empleado--------------------------------------------------
 }
