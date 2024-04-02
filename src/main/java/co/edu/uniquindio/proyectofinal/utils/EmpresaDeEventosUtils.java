@@ -18,6 +18,7 @@ public class EmpresaDeEventosUtils {
         empleado.setCedula("12345");
         empleado.setNombre("juan");
         empleado.setCorreo("awdawd@gmail.com");
+        empleado.setEvento("01");
         empresaDeEventos.getListaEmpleados().add(empleado);
 
 

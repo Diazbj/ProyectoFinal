@@ -1,6 +1,8 @@
 package co.edu.uniquindio.proyectofinal.mapping.mappers;
 
+import co.edu.uniquindio.proyectofinal.mapping.dto.EmpleadoDto;
 import co.edu.uniquindio.proyectofinal.mapping.dto.UsuarioDto;
+import co.edu.uniquindio.proyectofinal.model.Empleado;
 import co.edu.uniquindio.proyectofinal.model.Usuario;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +10,7 @@ import java.util.List;
 /*
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-03-31T17:20:10-0500",
+    date = "2024-04-02T13:45:13-0500",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.2 (Oracle Corporation)"
 )
 */
@@ -59,6 +61,56 @@ public class EmpresaDeEventosMapperImpl implements EmpresaDeEventosMapper {
         List<UsuarioDto> list = new ArrayList<UsuarioDto>( listUsuarios.size() );
         for ( Usuario usuario : listUsuarios ) {
             list.add( usuarioToUsuarioDto( usuario ) );
+        }
+
+        return list;
+    }
+
+    @Override
+    public EmpleadoDto empleadoToEmpleadoDto(Empleado empleado) {
+        if ( empleado == null ) {
+            return null;
+        }
+
+        String nombre = null;
+        String cedula = null;
+        String correo = null;
+
+        nombre = empleado.getNombre();
+        cedula = empleado.getCedula();
+        correo = empleado.getCorreo();
+
+        String eventos = null;
+
+        EmpleadoDto empleadoDto = new EmpleadoDto( nombre, cedula, correo, eventos );
+
+        return empleadoDto;
+    }
+
+    @Override
+    public Empleado empleadoDtoToEmpleado(EmpleadoDto empleadoDto) {
+        if ( empleadoDto == null ) {
+            return null;
+        }
+
+        Empleado empleado = new Empleado();
+
+        empleado.setNombre( empleadoDto.nombre() );
+        empleado.setCedula( empleadoDto.cedula() );
+        empleado.setCorreo( empleadoDto.correo() );
+
+        return empleado;
+    }
+
+    @Override
+    public List<EmpleadoDto> getEmpleadosDto(List<Empleado> listsEmpleados) {
+        if ( listsEmpleados == null ) {
+            return null;
+        }
+
+        List<EmpleadoDto> list = new ArrayList<EmpleadoDto>( listsEmpleados.size() );
+        for ( Empleado empleado : listsEmpleados ) {
+            list.add( empleadoToEmpleadoDto( empleado ) );
         }
 
         return list;

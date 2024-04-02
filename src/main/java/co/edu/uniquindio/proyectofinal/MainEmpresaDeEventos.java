@@ -14,7 +14,8 @@ public class MainEmpresaDeEventos {
         EmpleadoDto empleadoDto = new EmpleadoDto(
                 "123456",
                 "juan",
-                "sdasf"
+                "sdasf",
+                "01"
 
         );
 

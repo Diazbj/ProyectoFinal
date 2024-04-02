@@ -11,6 +11,7 @@ co\edu\uniquindio\proyectofinal\controller\ModelFactoryController.class
 module-info.class
 co\edu\uniquindio\proyectofinal\mapping\mappers\EmpresaDeEventosMapperImpl.class
 co\edu\uniquindio\proyectofinal\model\Empleado.class
+co\edu\uniquindio\proyectofinal\viewController\EmpleadoViewController.class
 co\edu\uniquindio\proyectofinal\controller\service\IModelFactoryService.class
 co\edu\uniquindio\proyectofinal\mapping\dto\UsuarioDto.class
 co\edu\uniquindio\proyectofinal\model\Persona.class
@@ -19,8 +20,11 @@ co\edu\uniquindio\proyectofinal\viewController\UsuarioViewController.class
 co\edu\uniquindio\proyectofinal\exceptions\UsuarioException.class
 co\edu\uniquindio\proyectofinal\controller\UsuarioController.class
 co\edu\uniquindio\proyectofinal\controller\service\IEmpresaDeEventosControllerService.class
+co\edu\uniquindio\proyectofinal\mapping\dto\EmpleadoDto.class
 co\edu\uniquindio\proyectofinal\controller\service\IUsuarioControllerService.class
+co\edu\uniquindio\proyectofinal\controller\service\IEmpleadoControllerService.class
 co\edu\uniquindio\proyectofinal\viewController\EmpresaDeEventosViewController.class
 co\edu\uniquindio\proyectofinal\mapping\mappers\EmpresaDeEventosMapper.class
 co\edu\uniquindio\proyectofinal\model\Usuario.class
 co\edu\uniquindio\proyectofinal\MainEmpresaDeEventos.class
+co\edu\uniquindio\proyectofinal\controller\EmpleadoController.class

@@ -8,37 +8,36 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="602.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.proyectofinal.viewController.UsuarioViewController">
+<AnchorPane prefHeight="531.0" prefWidth="797.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.proyectofinal.viewController.UsuarioViewController">
    <children>
-      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="400.0" prefWidth="602.0">
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="531.0" prefWidth="798.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="139.0" prefWidth="600.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="262.0" prefWidth="851.0">
                <children>
-                  <TextField fx:id="txtNombre" layoutX="132.0" layoutY="26.0" />
-                  <Label layoutX="53.0" layoutY="30.0" text="Nombre" />
-                  <Label layoutX="49.0" layoutY="70.0" text="Cedula" />
-                  <TextField fx:id="txtCedula" layoutX="132.0" layoutY="66.0" />
-                  <Label layoutX="300.0" layoutY="30.0" text="Correo" />
-                  <Label layoutX="300.0" layoutY="70.0" text="Codigo Reserva" />
-                  <TextField fx:id="txtCorreo" layoutX="403.0" layoutY="26.0" prefHeight="25.0" prefWidth="149.0" />
-                  <TextField fx:id="txtCodigoReserva" layoutX="403.0" layoutY="66.0" />
-                  <Button fx:id="btnNuevo" layoutX="49.0" layoutY="157.0" mnemonicParsing="false" text="Nuevo" />
-                  <Button fx:id="btnAgregar" layoutX="271.0" layoutY="157.0" mnemonicParsing="false" text="Agregar" />
-                  <Button fx:id="btnActualizar" layoutX="490.0" layoutY="157.0" mnemonicParsing="false" text="Actualizar" />
+                  <TextField fx:id="txtNombre" layoutX="144.0" layoutY="35.0" />
+                  <Label layoutX="65.0" layoutY="39.0" text="Nombre" />
+                  <Label layoutX="61.0" layoutY="79.0" text="Cedula" />
+                  <TextField fx:id="txtCedula" layoutX="144.0" layoutY="75.0" />
+                  <Label layoutX="426.0" layoutY="39.0" text="Correo" />
+                  <Label layoutX="426.0" layoutY="79.0" text="Codigo Reserva" />
+                  <TextField fx:id="txtCorreo" layoutX="529.0" layoutY="35.0" prefHeight="25.0" prefWidth="149.0" />
+                  <TextField fx:id="txtCodigoReserva" layoutX="529.0" layoutY="75.0" />
+                  <Button fx:id="btnNuevo" layoutX="61.0" layoutY="157.0" mnemonicParsing="false" text="Nuevo" />
+                  <Button fx:id="btnAgregar" layoutX="332.0" layoutY="157.0" mnemonicParsing="false" text="Agregar" />
+                  <Button fx:id="btnActualizar" layoutX="624.0" layoutY="157.0" mnemonicParsing="false" text="Actualizar" />
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="251.0" prefWidth="852.0">
                <children>
-                  <TableView layoutX="77.0" prefHeight="158.0" prefWidth="465.0">
+                  <TableView prefHeight="213.0" prefWidth="798.0">
                     <columns>
-                      <TableColumn fx:id="tcNombre" prefWidth="118.0" text="Nombre" />
-                      <TableColumn fx:id="tcCedula" prefWidth="109.0" text="Cedula" />
-                        <TableColumn fx:id="tcCorreo" prefWidth="109.0" text="Correo" />
-                        <TableColumn fx:id="tcCodigoReserva" prefWidth="128.0" text="Codigo Reserva" />
+                      <TableColumn fx:id="tcNombre" prefWidth="225.0" text="Nombre" />
+                      <TableColumn fx:id="tcCedula" prefWidth="194.0" text="Cedula" />
+                        <TableColumn fx:id="tcCorreo" prefWidth="201.0" text="Correo" />
+                        <TableColumn fx:id="tcCodigoReserva" prefWidth="177.0" text="Codigo Reserva" />
                     </columns>
                   </TableView>
-                  <Button fx:id="btnEliminar" layoutX="271.0" layoutY="163.0" mnemonicParsing="false" text="Eliminar" />
+                  <Button fx:id="btnEliminar" layoutX="369.0" layoutY="222.0" mnemonicParsing="false" text="Eliminar" />
                </children>
             </AnchorPane>
         </items>
