@@ -4,7 +4,7 @@ public record EmpleadoDto (
         String nombre,
         String cedula,
         String correo,
-        String eventos
+        String evento
 ){
 
 

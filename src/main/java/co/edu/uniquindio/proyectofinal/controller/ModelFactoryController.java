@@ -33,12 +33,13 @@ public class ModelFactoryController implements IModelFactoryService {
         cargarDatosBase();
     }
 
-    private void cargarDatosBase() {empresaDeEventos= EmpresaDeEventosUtils.inicializarDatos();
+    private void cargarDatosBase() {
+        empresaDeEventos = EmpresaDeEventosUtils.inicializarDatos();
     }
 
     public EmpresaDeEventos getEmpresaDeEventos(){return empresaDeEventos;}
 
-    public void setEmpresaDeEventos(EmpresaDeEventos empresaDeEventos){this.empresaDeEventos=empresaDeEventos;}
+    public void setEmpresaDeEventos(EmpresaDeEventos empresaDeEventos){this.empresaDeEventos = empresaDeEventos;}
 //---------------------------------------------Usuario--------------------------------------------------
     @Override
     public List<UsuarioDto> obtenerUsuaios() {

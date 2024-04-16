@@ -7,7 +7,7 @@ import co.edu.uniquindio.proyectofinal.model.Usuario;
 
 import java.util.ArrayList;
 
-public interface IEmpresaDeEventos {
+public interface IEmpresaDeEventosService {
     //----------------------------------------------Usuario------------------------------------------------
     public Usuario crearUsuario(String cedula, String nombre,String correo ) throws UsuarioException;
     public Boolean eliminarUsuario(String cedula) throws UsuarioException;
@@ -19,11 +19,11 @@ public interface IEmpresaDeEventos {
     //----------------------------------------------Usuario------------------------------------------------
 
     //---------------------------------------------Empleado--------------------------------------------------
-    public Empleado crearEmpleado(String id, String nombre, String correo)throws EmpleadoException;
-    public Boolean eliminarEmpleado(String  id)throws EmpleadoException;
-    boolean actualizarEmpleado(String idActual, Empleado empleado)throws EmpleadoException;
-    public boolean verificarEmpleadoExiste(String id) throws EmpleadoException;
-    public Empleado obtenerEmpleado(String id);
+    public Empleado crearEmpleado( String nombre,String cedula, String correo)throws EmpleadoException;
+    public Boolean eliminarEmpleado(String  cedula)throws EmpleadoException;
+    boolean actualizarEmpleado(String cedulaActual, Empleado empleado)throws EmpleadoException;
+    public boolean verificarEmpleadoExiste(String cedula) throws EmpleadoException;
+    public Empleado obtenerEmpleado(String cedula);
     public ArrayList<Empleado> obtenerEmpleados();
 
     //---------------------------------------------Empleado--------------------------------------------------

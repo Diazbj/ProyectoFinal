@@ -1,7 +1,6 @@
 package co.edu.uniquindio.proyectofinal.utils;
 
 import co.edu.uniquindio.proyectofinal.model.EmpresaDeEventos;
-import co.edu.uniquindio.proyectofinal.model.Reserva;
 import co.edu.uniquindio.proyectofinal.model.Usuario;
 import co.edu.uniquindio.proyectofinal.model.Empleado;
 
@@ -15,11 +14,13 @@ public class EmpresaDeEventosUtils {
         empresaDeEventos.getListaUsuarios().add(usuario);
 
         Empleado empleado = new Empleado();
+
+        empleado.setNombre("jordy");
         empleado.setCedula("12345");
-        empleado.setNombre("juan");
-        empleado.setCorreo("awdawd@gmail.com");
+        empleado.setCorreo("jordy@gmail.com");
         empleado.setEvento("01");
         empresaDeEventos.getListaEmpleados().add(empleado);
+        System.out.println("Información del evento creada");
 
 
 

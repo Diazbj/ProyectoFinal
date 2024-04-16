@@ -12,8 +12,8 @@ public class MainEmpresaDeEventos {
         ModelFactoryController modelFactoryController = ModelFactoryController.getInstance();
 
         EmpleadoDto empleadoDto = new EmpleadoDto(
-                "123456",
                 "juan",
+                "123456",
                 "sdasf",
                 "01"
 

@@ -10,7 +10,7 @@ import java.util.List;
 /*
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-04-02T13:45:13-0500",
+    date = "2024-04-03T01:56:24-0500",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.2 (Oracle Corporation)"
 )
 */
@@ -75,14 +75,14 @@ public class EmpresaDeEventosMapperImpl implements EmpresaDeEventosMapper {
         String nombre = null;
         String cedula = null;
         String correo = null;
+        String evento = null;
 
         nombre = empleado.getNombre();
         cedula = empleado.getCedula();
         correo = empleado.getCorreo();
+        evento = empleado.getEvento();
 
-        String eventos = null;
-
-        EmpleadoDto empleadoDto = new EmpleadoDto( nombre, cedula, correo, eventos );
+        EmpleadoDto empleadoDto = new EmpleadoDto( nombre, cedula, correo, evento );
 
         return empleadoDto;
     }
@@ -98,6 +98,7 @@ public class EmpresaDeEventosMapperImpl implements EmpresaDeEventosMapper {
         empleado.setNombre( empleadoDto.nombre() );
         empleado.setCedula( empleadoDto.cedula() );
         empleado.setCorreo( empleadoDto.correo() );
+        empleado.setEvento( empleadoDto.evento() );
 
         return empleado;
     }

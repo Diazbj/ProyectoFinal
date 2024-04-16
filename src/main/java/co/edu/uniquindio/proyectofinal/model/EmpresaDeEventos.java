@@ -2,11 +2,11 @@ package co.edu.uniquindio.proyectofinal.model;
 
 import co.edu.uniquindio.proyectofinal.exceptions.EmpleadoException;
 import co.edu.uniquindio.proyectofinal.exceptions.UsuarioException;
-import co.edu.uniquindio.proyectofinal.model.services.IEmpresaDeEventos;
+import co.edu.uniquindio.proyectofinal.model.services.IEmpresaDeEventosService;
 
 import java.util.ArrayList;
 
-public class EmpresaDeEventos implements IEmpresaDeEventos {
+public class EmpresaDeEventos implements IEmpresaDeEventosService {
 
     private static final long serialVersionUID=1L;
 
@@ -141,7 +141,7 @@ public class EmpresaDeEventos implements IEmpresaDeEventos {
 
     //---------------------------------------------Empleado--------------------------------------------------
     @Override
-    public Empleado crearEmpleado(String cedula, String nombre, String correo) throws EmpleadoException {
+    public Empleado crearEmpleado( String nombre,String cedula, String correo) throws EmpleadoException {
         Empleado nuevoEmpleado = null;
         boolean empleadoExiste = verificarEmpleadoExiste(cedula);
         if (empleadoExiste){

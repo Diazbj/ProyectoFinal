@@ -81,10 +81,11 @@ public class EmpleadoViewController {
     }
 
     private void initDataBinding(){
-        tcCedula.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().cedula()));
+
         tcNombre.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().nombre()));
+        tcCedula.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().cedula()));
         tcCorreo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().correo()));
-        tcEvento.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().eventos()));
+        tcEvento.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().evento()));
 
 
     }
@@ -99,17 +100,19 @@ public class EmpleadoViewController {
     }
     private void mostrarInformacionEmpleado(EmpleadoDto empleadoSeleccionado){
         if(empleadoSeleccionado != null){
-            txtCedula.setText(empleadoSeleccionado.cedula());
+
             txtNombre.setText(empleadoSeleccionado.nombre());
+            txtCedula.setText(empleadoSeleccionado.cedula());
             txtCorreo.setText(empleadoSeleccionado.correo());
-            txtEventos.setText(empleadoSeleccionado.eventos());
+            txtEventos.setText(empleadoSeleccionado.evento());
         }
     }
 
     @FXML
     void nuevoEmpleadoAction(ActionEvent event) {
-        txtCedula.setText("Ingrese la cedula");
+
         txtNombre.setText("Ingrese el nombre");
+        txtCedula.setText("Ingrese la cedula");
         txtCorreo.setText("Ingrese el correo");
         txtEventos.setText("Ingrese el codigo de el evento asignado");
     }
@@ -167,12 +170,12 @@ public class EmpleadoViewController {
     private void actualizarEmpleado(){
         boolean empleadoActualizado = false;
 
-        String idActual = empleadoSeleccionado.cedula();
+        String cedulaActual = empleadoSeleccionado.cedula();
         EmpleadoDto empleadoDto = construirEmpleadoDto();
         if(empleadoSeleccionado != null){
             //3. Validar la información
             if(datosValidos(empleadoSeleccionado)){
-                empleadoActualizado = empleadoControllerService.actualizarEmpleado(idActual,empleadoDto);
+                empleadoActualizado = empleadoControllerService.actualizarEmpleado(cedulaActual,empleadoDto);
                 if(empleadoActualizado){
                     listaEmpleadosDto.remove(empleadoSeleccionado);
                     listaEmpleadosDto.add(empleadoDto);
@@ -191,15 +194,17 @@ public class EmpleadoViewController {
 
     private EmpleadoDto construirEmpleadoDto() {
         return new EmpleadoDto(
-                txtCedula.getText(),
+
                 txtNombre.getText(),
+                txtCedula.getText(),
                 txtCorreo.getText(),
                 txtEventos.getText());
     }
 
     private void limpiarCamposEmpleado() {
-        txtCedula.setText("");
+
         txtNombre.setText("");
+        txtCedula.setText("");
         txtCorreo.setText("");
         txtEventos.setText("");
     }
@@ -212,7 +217,7 @@ public class EmpleadoViewController {
             mensaje += "El id es invalido \n";
         if (empleadoDto.correo() == null || empleadoDto.correo().equals(""))
             mensaje += "El id es invalido \n";
-        if (empleadoDto.eventos() == null || empleadoDto.eventos().equals(""))
+        if (empleadoDto.evento() == null || empleadoDto.evento().equals(""))
             mensaje += "Los eventos asignados son invalidos \n";
         if(mensaje.equals("")){
             return true;
