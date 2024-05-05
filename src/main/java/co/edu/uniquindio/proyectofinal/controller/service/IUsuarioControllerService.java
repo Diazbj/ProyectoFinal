@@ -6,11 +6,11 @@ import java.util.List;
 
 public interface IUsuarioControllerService {
 
-    List<UsuarioDto> obtenerusuarios();
-
-    boolean agregarUsuario(UsuarioDto usuarioDto);
-
-    boolean eliminarUsuario(String cedula);
-
-    boolean actualizarUsuario(String cedulaActual, UsuarioDto usuarioDto);
+//    List<UsuarioDto> obtenerusuarios();
+//
+//    boolean agregarUsuario(UsuarioDto usuarioDto);
+//
+//    boolean eliminarUsuario(String cedula);
+//
+//    boolean actualizarUsuario(String cedulaActual, UsuarioDto usuarioDto);
 }

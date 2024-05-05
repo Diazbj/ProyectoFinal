@@ -4,9 +4,10 @@ import co.edu.uniquindio.proyectofinal.exceptions.EmpleadoException;
 import co.edu.uniquindio.proyectofinal.exceptions.UsuarioException;
 import co.edu.uniquindio.proyectofinal.model.services.IEmpresaDeEventosService;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class EmpresaDeEventos implements IEmpresaDeEventosService {
+public class EmpresaDeEventos implements IEmpresaDeEventosService, Serializable {
 
     private static final long serialVersionUID=1L;
 
@@ -52,91 +53,91 @@ public class EmpresaDeEventos implements IEmpresaDeEventosService {
     }
 
     //----------------------------------------------Usuario------------------------------------------------
-    @Override
-    public Usuario crearUsuario(String cedula, String nombre,String correo) throws UsuarioException {
-        Usuario nuevoUsuario=null;
-        boolean usuarioExiste=verificarUsuarioExistente(cedula);
-        if(usuarioExiste){
-            throw new UsuarioException("El Usuario con cedula: "+cedula+" ya existe");
-        }else{
-            nuevoUsuario=new Usuario();
-            nuevoUsuario.setCedula(cedula);
-            nuevoUsuario.setNombre(nombre);
-            nuevoUsuario.setCorreo(correo);
-            getListaUsuarios().add(nuevoUsuario);
+//    @Override
+//    public Usuario crearUsuario(String cedula, String nombre,String correo) throws UsuarioException {
+//        Usuario nuevoUsuario=null;
+//        boolean usuarioExiste=verificarUsuarioExistente(cedula);
+//        if(usuarioExiste){
+//            throw new UsuarioException("El Usuario con cedula: "+cedula+" ya existe");
+//        }else{
+//            nuevoUsuario=new Usuario();
+//            nuevoUsuario.setCedula(cedula);
+//            nuevoUsuario.setNombre(nombre);
+//            nuevoUsuario.setCorreo(correo);
+//            getListaUsuarios().add(nuevoUsuario);
+//
+//        }
+//        return nuevoUsuario;
+//    }
 
-        }
-        return nuevoUsuario;
-    }
-
-    @Override
-    public Boolean eliminarUsuario(String cedula)throws UsuarioException {
-        Usuario usuario=null;
-        boolean flagExiste=false;
-        usuario=obtenerUsuario(cedula);
-        if (usuario==null){
-            throw new UsuarioException("El usuario a eliminar no existe");
-        }else{
-            getListaUsuarios().remove(usuario);
-            flagExiste=true;
-        }
-        return flagExiste;
-    }
-
-    public void agregarUsuario(Usuario nuevoUsuario) throws UsuarioException{
-        getListaUsuarios().add(nuevoUsuario);
-    }
-
-    @Override
-    public boolean actualizarUsuario(String cedulaActual, Usuario usuario) throws UsuarioException {
-        Usuario usuarioActual=obtenerUsuario(cedulaActual);
-        if(usuarioActual==null){
-            throw new UsuarioException("El usuario actual no existe");
-        }else{
-            usuarioActual.setNombre(usuario.getNombre());
-            usuarioActual.setCedula(usuario.getCedula());
-            usuarioActual.setCorreo(usuario.getCorreo());
-            return true;
-        }
-
-    }
-
-    @Override
-    public boolean verificarUsuarioExistente(String cedula) throws UsuarioException{
-        if (usuarioExiste(cedula)){
-            throw new UsuarioException("El usuario con cedula "+cedula+" ya existe");
-        }else{
-            return false;
-        }
-    }
-
-    private boolean usuarioExiste(String cedula) {
-        boolean usuarioEncontrado=false;
-        for (Usuario usuario:getListaUsuarios()) {
-            if (usuario.getCedula().equalsIgnoreCase(cedula)){
-                usuarioEncontrado=true;
-                break;
-            }
-        }
-        return usuarioEncontrado;
-    }
-
-    @Override
-    public Usuario obtenerUsuario(String cedula) {
-        Usuario usuarioEncontrado=null;
-        for (Usuario usuario:getListaUsuarios()) {
-            if (usuario.getCedula().equalsIgnoreCase(cedula)){
-                usuarioEncontrado=usuario;
-                break;
-            }
-        }
-        return usuarioEncontrado;
-    }
-
-    @Override
-    public ArrayList<Usuario> obtenerUsuarios() {
-        return getListaUsuarios();
-    }
+//    @Override
+//    public Boolean eliminarUsuario(String cedula)throws UsuarioException {
+//        Usuario usuario=null;
+//        boolean flagExiste=false;
+//        usuario=obtenerUsuario(cedula);
+//        if (usuario==null){
+//            throw new UsuarioException("El usuario a eliminar no existe");
+//        }else{
+//            getListaUsuarios().remove(usuario);
+//            flagExiste=true;
+//        }
+//        return flagExiste;
+//    }
+//
+//    public void agregarUsuario(Usuario nuevoUsuario) throws UsuarioException{
+//        getListaUsuarios().add(nuevoUsuario);
+//    }
+//
+//    @Override
+//    public boolean actualizarUsuario(String cedulaActual, Usuario usuario) throws UsuarioException {
+//        Usuario usuarioActual=obtenerUsuario(cedulaActual);
+//        if(usuarioActual==null){
+//            throw new UsuarioException("El usuario actual no existe");
+//        }else{
+//            usuarioActual.setNombre(usuario.getNombre());
+//            usuarioActual.setCedula(usuario.getCedula());
+//            usuarioActual.setCorreo(usuario.getCorreo());
+//            return true;
+//        }
+//
+//    }
+//
+//    @Override
+//    public boolean verificarUsuarioExistente(String cedula) throws UsuarioException{
+//        if (usuarioExiste(cedula)){
+//            throw new UsuarioException("El usuario con cedula "+cedula+" ya existe");
+//        }else{
+//            return false;
+//        }
+//    }
+//
+//    private boolean usuarioExiste(String cedula) {
+//        boolean usuarioEncontrado=false;
+//        for (Usuario usuario:getListaUsuarios()) {
+//            if (usuario.getCedula().equalsIgnoreCase(cedula)){
+//                usuarioEncontrado=true;
+//                break;
+//            }
+//        }
+//        return usuarioEncontrado;
+//    }
+//
+//    @Override
+//    public Usuario obtenerUsuario(String cedula) {
+//        Usuario usuarioEncontrado=null;
+//        for (Usuario usuario:getListaUsuarios()) {
+//            if (usuario.getCedula().equalsIgnoreCase(cedula)){
+//                usuarioEncontrado=usuario;
+//                break;
+//            }
+//        }
+//        return usuarioEncontrado;
+//    }
+//
+//    @Override
+//    public ArrayList<Usuario> obtenerUsuarios() {
+//        return getListaUsuarios();
+//    }
     //----------------------------------------------Usuario------------------------------------------------
 
     //---------------------------------------------Empleado--------------------------------------------------

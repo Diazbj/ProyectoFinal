@@ -2,6 +2,8 @@ module uniquindio.edu.co.proyectofinal {
     requires javafx.controls;
     requires javafx.fxml;
     requires org.mapstruct;
+    requires java.desktop;
+    requires java.logging;
 
 
     opens co.edu.uniquindio.proyectofinal to javafx.fxml;

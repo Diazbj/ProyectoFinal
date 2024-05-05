@@ -9,12 +9,12 @@ import java.util.ArrayList;
 
 public interface IEmpresaDeEventosService {
     //----------------------------------------------Usuario------------------------------------------------
-    public Usuario crearUsuario(String cedula, String nombre,String correo ) throws UsuarioException;
-    public Boolean eliminarUsuario(String cedula) throws UsuarioException;
-    boolean actualizarUsuario(String cedulaActual, Usuario usuario)throws UsuarioException;
-    public boolean  verificarUsuarioExistente(String cedula)throws UsuarioException;
-    public Usuario obtenerUsuario(String cedula);
-    public ArrayList<Usuario> obtenerUsuarios();
+//    public Usuario crearUsuario(String cedula, String nombre,String correo ) throws UsuarioException;
+//    public Boolean eliminarUsuario(String cedula) throws UsuarioException;
+//    boolean actualizarUsuario(String cedulaActual, Usuario usuario)throws UsuarioException;
+//    public boolean  verificarUsuarioExistente(String cedula)throws UsuarioException;
+//    public Usuario obtenerUsuario(String cedula);
+//    public ArrayList<Usuario> obtenerUsuarios();
 
     //----------------------------------------------Usuario------------------------------------------------
 

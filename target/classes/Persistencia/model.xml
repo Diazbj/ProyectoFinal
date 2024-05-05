@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="21.0.2" class="java.beans.XMLDecoder">
+ <object class="co.edu.uniquindio.proyectofinal.model.EmpresaDeEventos" id="EmpresaDeEventos0">
+  <void property="listaEmpleados">
+   <void method="add">
+    <object class="co.edu.uniquindio.proyectofinal.model.Empleado">
+     <void property="cedula">
+      <string>123456</string>
+     </void>
+     <void property="correo">
+      <string>david@gmail.com</string>
+     </void>
+     <void property="evento">
+      <string>02</string>
+     </void>
+     <void property="nombre">
+      <string>david</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.proyectofinal.model.Empleado">
+     <void property="cedula">
+      <string>1234567</string>
+     </void>
+     <void property="correo">
+      <string>gonza@gmail.com</string>
+     </void>
+     <void property="evento">
+      <string>03</string>
+     </void>
+     <void property="nombre">
+      <string>Gonzalo</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.proyectofinal.model.Empleado">
+     <void property="cedula">
+      <string>12345678</string>
+     </void>
+     <void property="correo">
+      <string>Albert@gmail.com</string>
+     </void>
+     <void property="evento">
+      <string>04</string>
+     </void>
+     <void property="nombre">
+      <string>Alberto</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.proyectofinal.model.Empleado">
+     <void property="cedula">
+      <string>123456789</string>
+     </void>
+     <void property="correo">
+      <string>jenn@gmail.com</string>
+     </void>
+     <void property="evento">
+      <string>05</string>
+     </void>
+     <void property="nombre">
+      <string>Jennifer</string>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
+</java>

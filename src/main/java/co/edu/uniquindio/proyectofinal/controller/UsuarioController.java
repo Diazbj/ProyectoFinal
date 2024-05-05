@@ -9,25 +9,25 @@ public class UsuarioController implements IUsuarioControllerService {
 
     ModelFactoryController modelFactoryController;
 
-    public UsuarioController(){modelFactoryController=ModelFactoryController.getInstance();}
-
-
-    public List<UsuarioDto> obtenerusuarios() {
-        return modelFactoryController.obtenerUsuaios();
-    }
-
-    @Override
-    public boolean agregarUsuario(UsuarioDto usuarioDto) {
-        return false;
-    }
-
-    @Override
-    public boolean eliminarUsuario(String cedula) {
-        return false;
-    }
-
-    @Override
-    public boolean actualizarUsuario(String cedulaActual, UsuarioDto usuarioDto) {
-        return false;
-    }
+//    public UsuarioController(){modelFactoryController=ModelFactoryController.getInstance();}
+//
+//
+//    public List<UsuarioDto> obtenerusuarios() {
+//        return modelFactoryController.obtenerUsuaios();
+//    }
+//
+//    @Override
+//    public boolean agregarUsuario(UsuarioDto usuarioDto) {
+//        return false;
+//    }
+//
+//    @Override
+//    public boolean eliminarUsuario(String cedula) {
+//        return false;
+//    }
+//
+//    @Override
+//    public boolean actualizarUsuario(String cedulaActual, UsuarioDto usuarioDto) {
+//        return false;
+//    }
 }

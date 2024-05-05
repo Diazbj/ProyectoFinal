@@ -1,29 +1,46 @@
 package co.edu.uniquindio.proyectofinal.model;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 
-public class Usuario extends Persona {
+public class Usuario implements Serializable {
 
-    ArrayList<Reserva> listaReservasAsociado = new ArrayList<>();
+    //atributos
+    private static final long serialVersionUID = 1L;
+    private String usuario;
+    private String contrasenia;
 
-    ArrayList<Reserva> listaReservas=new ArrayList<>();
-    public Usuario(){
+
+    public Usuario(String usuario, String contrasenia) {
+        super();
+        this.usuario = usuario;
+        this.contrasenia = contrasenia;
+    }
+
+    // contsructir sin parametros
+    public Usuario() {
+        super();
 
     }
 
-    public ArrayList<Reserva> getListaReservasAsociado() {
-        return listaReservasAsociado;
+
+    public String getUsuario() {
+        return usuario;
+    }
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+    public String getContrasenia() {
+        return contrasenia;
+    }
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
     }
 
-    public void setListaReservasAsociado(ArrayList<Reserva> listaReservasAsociado) {
-        this.listaReservasAsociado = listaReservasAsociado;
+
+    @Override
+    public String toString() {
+        return "Usuario [usuario=" + usuario + ", contrasenia=" + contrasenia + "]";
     }
 
-    public void setListaReservas(ArrayList<Reserva> listaReservas) {
-        this.listaReservas = listaReservas;
-    }
 
-    public ArrayList<Reserva> getListaReservas() {
-        return listaReservas;
-    }
 }
