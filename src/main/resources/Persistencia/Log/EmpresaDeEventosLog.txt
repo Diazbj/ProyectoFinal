@@ -168,3 +168,17 @@ may 05, 2024 5:01:57 A. M. co.edu.uniquindio.proyectofinal.utils.ArchivoUtil g
 INFO: se elimino el empleado,Eliminar empleado,2024-05-05
 may 05, 2024 5:02:02 A. M. co.edu.uniquindio.proyectofinal.utils.ArchivoUtil guardarRegistroLog
 INFO: inicioSesión,Inicio de sesión,2024-05-05
+may 06, 2024 1:29:28 A. M. co.edu.uniquindio.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-06
+may 06, 2024 1:43:49 A. M. co.edu.uniquindio.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-06
+may 06, 2024 1:44:02 A. M. co.edu.uniquindio.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-06
+may 06, 2024 2:33:17 A. M. co.edu.uniquindio.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-06
+may 06, 2024 2:34:39 A. M. co.edu.uniquindio.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-06
+may 06, 2024 2:41:26 A. M. co.edu.uniquindio.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-06
+may 06, 2024 2:41:42 A. M. co.edu.uniquindio.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-06

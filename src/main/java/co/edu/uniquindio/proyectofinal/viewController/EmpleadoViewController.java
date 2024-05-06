@@ -61,7 +61,7 @@ public class EmpleadoViewController {
     private TextField txtCorreo;
 
     @FXML
-    private TextField txtEventos;
+    private TextField txtCodigo;
 
     @FXML
     private TextField txtNombre;
@@ -104,7 +104,7 @@ public class EmpleadoViewController {
             txtNombre.setText(empleadoSeleccionado.nombre());
             txtCedula.setText(empleadoSeleccionado.cedula());
             txtCorreo.setText(empleadoSeleccionado.correo());
-            txtEventos.setText(empleadoSeleccionado.evento());
+            txtCodigo.setText(empleadoSeleccionado.evento());
         }
     }
 
@@ -114,7 +114,7 @@ public class EmpleadoViewController {
         txtNombre.setText("Ingrese el nombre");
         txtCedula.setText("Ingrese la cedula");
         txtCorreo.setText("Ingrese el correo");
-        txtEventos.setText("Ingrese el codigo de el evento asignado");
+        txtCodigo.setText("Ingrese el codigo de el evento asignado");
     }
 
     @FXML
@@ -198,7 +198,7 @@ public class EmpleadoViewController {
                 txtNombre.getText(),
                 txtCedula.getText(),
                 txtCorreo.getText(),
-                txtEventos.getText());
+                txtCodigo.getText());
     }
 
     private void limpiarCamposEmpleado() {
@@ -206,7 +206,7 @@ public class EmpleadoViewController {
         txtNombre.setText("");
         txtCedula.setText("");
         txtCorreo.setText("");
-        txtEventos.setText("");
+        txtCodigo.setText("");
     }
 
     private boolean datosValidos(EmpleadoDto empleadoDto) {
