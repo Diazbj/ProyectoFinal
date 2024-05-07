@@ -17,6 +17,7 @@ public class Persistencia {
     //bancoUq/src/main/resources/persistencia/archivoClientes.txt
     public static final String RUTA_ARCHIVO_CLIENTES = "src/main/resources/persistencia/archivoClientes.txt";
     public static final String RUTA_ARCHIVO_EMPLEADOS = "src/main/resources/persistencia/archivoEmpleados.txt";
+    public static final String RUTA_ARCHIVO_EVENTO = "src/main/resources/Persistencia/archivoEvento.txt";
     public static final String RUTA_ARCHIVO_USUARIOS = "/src/main/resources/persistencia/archivoUsuarios.txt";
     public static final String RUTA_ARCHIVO_LOG = "src/main/resources/Persistencia/Log/EmpresaDeEventosLog.txt";
     public static final String RUTA_ARCHIVO_MODELO_EMPRESA_DE_EVENTOS_BINARIO = "src/main/resources/Persistencia/model.data";
@@ -37,6 +38,10 @@ public class Persistencia {
         if(empleadosCargados.size() > 0)
             empresaDeEventos.getListaEmpleados().addAll(empleadosCargados);
 
+        ArrayList<Evento> eventosCargados = cargarEventos();
+        if(eventosCargados.size()>0)
+            empresaDeEventos.getListaEventos().addAll(eventosCargados);
+
         //cargar archivo transcciones
 
         //cargar archivo empleados
@@ -44,6 +49,43 @@ public class Persistencia {
         //cargar archivo prestamo
 
     }
+
+    //--------------------------------------Eventos--------------------------------------
+    public  static void guardarEventos(ArrayList<Evento> listaEventos)throws IOException{
+        String contenido = "";
+        for (Evento evento: listaEventos){
+            contenido += evento.getCodigo()+ "@@" + evento.getNombre() + "@@" + evento.getDescripcion() + "@@" +
+                    evento.getFecha() + "@@" + evento.getCapacidadMax() + "@@" + evento.getCedulaEmpleado() +
+                    "@@" + evento.getReserva().getCodigo() + "\n";
+        }
+        ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_EVENTO, contenido, false);
+    }
+
+    public static ArrayList<Evento> cargarEventos()throws FileNotFoundException, IOException{
+        ArrayList<Evento> eventos = new ArrayList<>();
+        ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_EVENTO);
+        String linea = "";
+        Empleado empleado = new Empleado();
+        Reserva reserva = new Reserva();
+        for (int i = 0; i<contenido.size(); i++){
+            linea = contenido.get(i);
+            Evento evento = new Evento();
+            evento.setCodigo(linea.split("@@")[0]);
+            evento.setNombre(linea.split("@@")[1]);
+            evento.setDescripcion(linea.split("@@")[2]);
+            evento.setFecha(linea.split("@@")[3]);
+            evento.setCapacidadMax(Integer.valueOf(linea.split("@@")[4]));
+            evento.setCedulaEmpleado(linea.split("@@")[5]);
+//            reserva.setId(linea.split("@@")[6]);
+//            evento.setEmpleado(empleado);
+//            evento.setReserva(reserva);
+            eventos.add(evento);
+
+        }
+
+        return eventos;
+    }
+    //--------------------------------------Eventos--------------------------------------
     public static void guardarCopiaSeguridad() {
         try {
             // Convertir las rutas de cadena a objetos de Path

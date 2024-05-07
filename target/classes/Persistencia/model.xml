@@ -5,6 +5,22 @@
    <void method="add">
     <object class="co.edu.uniquindio.proyectofinal.model.Empleado">
      <void property="cedula">
+      <string>12345</string>
+     </void>
+     <void property="correo">
+      <string>jordy@gmail.com</string>
+     </void>
+     <void property="evento">
+      <string>01</string>
+     </void>
+     <void property="nombre">
+      <string>jordy</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.proyectofinal.model.Empleado">
+     <void property="cedula">
       <string>123456</string>
      </void>
      <void property="correo">
@@ -63,6 +79,52 @@
      </void>
      <void property="nombre">
       <string>Jennifer</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="listaEventos">
+   <void method="add">
+    <object class="co.edu.uniquindio.proyectofinal.model.Evento">
+     <void property="capacidadMax">
+      <int>1000</int>
+     </void>
+     <void property="cedulaEmpleado">
+      <string>123456</string>
+     </void>
+     <void property="codigo">
+      <string>10</string>
+     </void>
+     <void property="descripcion">
+      <string>bandas de rock</string>
+     </void>
+     <void property="fecha">
+      <string>2024-05-07</string>
+     </void>
+     <void property="nombre">
+      <string>Concierto</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.proyectofinal.model.Evento">
+     <void property="capacidadMax">
+      <int>200</int>
+     </void>
+     <void property="cedulaEmpleado">
+      <string>12345</string>
+     </void>
+     <void property="codigo">
+      <string>08</string>
+     </void>
+     <void property="descripcion">
+      <string>Matrimonio</string>
+     </void>
+     <void property="fecha">
+      <string>2024-05-07</string>
+     </void>
+     <void property="nombre">
+      <string>Evento Social</string>
      </void>
     </object>
    </void>

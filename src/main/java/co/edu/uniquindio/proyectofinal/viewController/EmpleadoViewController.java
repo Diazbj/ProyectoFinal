@@ -214,9 +214,9 @@ public class EmpleadoViewController {
         if (empleadoDto.nombre() == null || empleadoDto.nombre().equals(""))
             mensaje += "El nombre es invalido \n";
         if (empleadoDto.cedula() == null || empleadoDto.cedula().equals(""))
-            mensaje += "El id es invalido \n";
+            mensaje += "El codigo es invalido \n";
         if (empleadoDto.correo() == null || empleadoDto.correo().equals(""))
-            mensaje += "El id es invalido \n";
+            mensaje += "El codigo es invalido \n";
         if (empleadoDto.evento() == null || empleadoDto.evento().equals(""))
             mensaje += "Los eventos asignados son invalidos \n";
         if(mensaje.equals("")){

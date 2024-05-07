@@ -1,6 +1,7 @@
 package co.edu.uniquindio.proyectofinal.controller.service;
 
 import co.edu.uniquindio.proyectofinal.mapping.dto.EmpleadoDto;
+import co.edu.uniquindio.proyectofinal.mapping.dto.EventoDto;
 import co.edu.uniquindio.proyectofinal.mapping.dto.UsuarioDto;
 import co.edu.uniquindio.proyectofinal.model.Usuario;
 
@@ -20,5 +21,14 @@ public interface IModelFactoryService {
     boolean agregarEmpleado(EmpleadoDto empleadoDto);
     boolean eliminarEmpleado(String id);
     boolean actualizarEmpleado(String idActual, EmpleadoDto empleadoDto);
+
+    //-----------------------------------------------Evento---------------------------------------------
+
+    List<EventoDto> obtenerEventos();
+    boolean agregarEvento(EventoDto eventoDto);
+    boolean eliminarEventos(String id);
+    boolean actualizarEventos(String idActual, EventoDto eventoDto);
+
+    //-----------------------------------------------Evento---------------------------------------------
 
 }

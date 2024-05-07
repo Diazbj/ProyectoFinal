@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
@@ -23,12 +25,12 @@
                   <Label layoutX="436.0" layoutY="161.0" text="Empleado Encargado" />
                   <TextField fx:id="txtNombre" layoutX="118.0" layoutY="88.0" />
                   <TextField fx:id="txtDescripcion" layoutX="118.0" layoutY="148.0" />
-                  <TextField fx:id="txtFecha" layoutX="577.0" layoutY="28.0" />
                   <TextField fx:id="txtCapacidad" layoutX="577.0" layoutY="88.0" />
-                  <TextField fx:id="txtEmpleado" layoutX="577.0" layoutY="161.0" />
-                  <Button fx:id="btnNuevo" layoutX="141.0" layoutY="200.0" mnemonicParsing="false" text="Nuevo" />
-                  <Button fx:id="btnAgregar" layoutX="359.0" layoutY="200.0" mnemonicParsing="false" text="Agregar" />
-                  <Button fx:id="btnActualizar" layoutX="600.0" layoutY="200.0" mnemonicParsing="false" text="Actualizar" />
+                  <Button fx:id="btnNuevo" layoutX="141.0" layoutY="200.0" mnemonicParsing="false" onAction="#nuevoEventoAction" text="Nuevo" />
+                  <Button fx:id="btnAgregar" layoutX="359.0" layoutY="200.0" mnemonicParsing="false" onAction="#agregarEventoAction" text="Agregar" />
+                  <Button fx:id="btnActualizar" layoutX="600.0" layoutY="200.0" mnemonicParsing="false" onAction="#actualizarEventoAction" text="Actualizar" />
+                  <ComboBox fx:id="comboEmpleado" layoutX="577.0" layoutY="157.0" prefWidth="150.0" />
+                  <DatePicker fx:id="txtFecha" layoutX="577.0" layoutY="28.0" prefHeight="25.0" prefWidth="150.0" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="240.0" prefWidth="770.0">
@@ -43,6 +45,12 @@
                         <TableColumn fx:id="tcEmpleado" prefWidth="72.0" text=" Empleado" />
                     </columns>
                   </TableView>
+                  <TableView fx:id="tableReservas" layoutX="588.0" layoutY="7.0" prefHeight="242.0" prefWidth="172.0">
+                    <columns>
+                      <TableColumn fx:id="tcReservas" prefWidth="171.0" text="Codigos de Reservas" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="btnEliminar" layoutX="359.0" layoutY="258.0" mnemonicParsing="false" onAction="#eliminarEventoAction" text="Eliminar" />
                </children>
             </AnchorPane>
         </items>
