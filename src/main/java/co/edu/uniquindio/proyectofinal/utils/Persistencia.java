@@ -56,7 +56,7 @@ public class Persistencia {
         for (Evento evento: listaEventos){
             contenido += evento.getCodigo()+ "@@" + evento.getNombre() + "@@" + evento.getDescripcion() + "@@" +
                     evento.getFecha() + "@@" + evento.getCapacidadMax() + "@@" + evento.getCedulaEmpleado() +
-                    "@@" + evento.getReserva().getCodigo() + "\n";
+                    "@@" + evento.getCedulaEmpleado() + "\n";
         }
         ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_EVENTO, contenido, false);
     }
@@ -196,7 +196,22 @@ public class Persistencia {
         }
         return empleados;
     }
+    public static void guardarObjetos(ArrayList<Usuario> listaUsuarios,ArrayList<Reserva> listaReservas, ArrayList<Evento> listaEventos,ArrayList<Empleado> listaEmpleados,  String ruta) throws IOException  {
+        String contenido = "";
 
+
+        for(Evento eventoAux:listaEventos){
+            contenido += eventoAux.getCodigo() + "@@" + eventoAux.getNombre() + "@@" + eventoAux.getDescripcion() + "@@" +
+                    eventoAux.getFecha() + "@@" + eventoAux.getCapacidadMax() + "@@" + eventoAux.getCedulaEmpleado() +
+                    "@@" + eventoAux.getReserva().getCodigo() + "\n";
+        }
+        ArchivoUtil.guardarArchivo(ruta, contenido, true);
+
+        for(Empleado empleadoAux: listaEmpleados){
+            contenido += empleadoAux.getCedula() + "@@" + empleadoAux.getNombre() + "@@" + empleadoAux.getCorreo() + "@@" +
+                    empleadoAux.getEvento()+ "\n";
+        }
+    }
 
     public static void guardaRegistroLog(String mensajeLog, int nivel, String accion)
     {

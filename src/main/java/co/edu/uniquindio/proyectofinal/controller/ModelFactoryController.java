@@ -46,7 +46,7 @@ public class ModelFactoryController implements IModelFactoryService {
 
         //4. Guardar y Cargar el recurso serializable XML
 //		guardarResourceXML();
-//        cargarResourceXML();
+        cargarResourceXML();
 
         //Siempre se debe verificar si la raiz del recurso es null
 
@@ -59,6 +59,14 @@ public class ModelFactoryController implements IModelFactoryService {
     private void guardarDatosEmpleados(){
         try{
             Persistencia.guardarEmpleados(getEmpresaDeEventos().getListaEmpleados());
+        }catch (IOException e){
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void guardarDatosEventos(){
+        try{
+            Persistencia.guardarEventos(getEmpresaDeEventos().getListaEventos());
         }catch (IOException e){
             throw new RuntimeException(e);
         }
@@ -80,6 +88,7 @@ public class ModelFactoryController implements IModelFactoryService {
     private void salvarDatosPrueba() {
         try {
             Persistencia.guardarEmpleados(getEmpresaDeEventos().getListaEmpleados());
+            Persistencia.guardarEventos(getEmpresaDeEventos().getListaEventos());
            // Persistencia.guardarClientes(getBanco().getListaClientes());
         } catch (IOException e) {
             throw new RuntimeException(e);

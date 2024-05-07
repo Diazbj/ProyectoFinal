@@ -80,6 +80,8 @@ public class EventoViewController {
     @FXML
     private TextField txtNombre;
 
+
+
     @FXML
     void initialize(){
         eventoControllerService = new EventoController();
@@ -107,7 +109,7 @@ public class EventoViewController {
         listenerSelection();
     }
 
-    private void initComboBox() {
+    void initComboBox() {
         ObservableList<EmpleadoDto> listaEmpleados = obtenerEmpleados();
         if (listaEmpleados != null) {
             comboEmpleado.setItems(listaEmpleados);

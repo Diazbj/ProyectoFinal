@@ -20,6 +20,10 @@ public class EmpleadoViewController {
     EmpleadoController empleadoControllerService;
     ObservableList<EmpleadoDto> listaEmpleadosDto = FXCollections.observableArrayList();
     EmpleadoDto empleadoSeleccionado;
+    private EventoViewController eventoViewController;
+    public void setEventoViewController(EventoViewController eventoViewController) {
+        this.eventoViewController = eventoViewController;
+    }
 
     @FXML
     private ResourceBundle resources;
@@ -135,10 +139,11 @@ public class EmpleadoViewController {
         EmpleadoDto empleadoDto = construirEmpleadoDto();
 
         if(datosValidos(empleadoDto)){
-            if(empleadoControllerService.agregarEmpleado(empleadoDto)){
+            if(empleadoControllerService.agregarEmpleado(empleadoDto)) {
                 listaEmpleadosDto.add(empleadoDto);
                 mostrarMensaje("Notificacion empleado", "Empleado creado", "El empleado se ha creado con éxito", Alert.AlertType.INFORMATION);
                 limpiarCamposEmpleado();
+                actualizarComboBoxEmpleados(eventoViewController);
             }else{
                 mostrarMensaje("Notificación empleado", "Empleado no creado", "El empleado no se ha creado con éxito", Alert.AlertType.ERROR);
             }
@@ -147,6 +152,13 @@ public class EmpleadoViewController {
         }
     }
 
+    private void actualizarComboBoxEmpleados(EventoViewController eventoViewController) {
+        if (eventoViewController != null) {
+            eventoViewController.initComboBox();
+        } else {
+            mostrarMensaje("Error", "Instancia de EventoViewController no disponible", "No se pudo actualizar el ComboBox de empleados", Alert.AlertType.ERROR);
+        }
+    }
     private void eliminarEmpleado() {
         boolean empleadoEliminado = false;
         if(empleadoSeleccionado != null){
