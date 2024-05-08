@@ -5,22 +5,6 @@
    <void method="add">
     <object class="co.edu.uniquindio.proyectofinal.model.Empleado">
      <void property="cedula">
-      <string>123456</string>
-     </void>
-     <void property="correo">
-      <string>david@gmail.com</string>
-     </void>
-     <void property="evento">
-      <string>02</string>
-     </void>
-     <void property="nombre">
-      <string>david</string>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="co.edu.uniquindio.proyectofinal.model.Empleado">
-     <void property="cedula">
       <string>1234567</string>
      </void>
      <void property="correo">
