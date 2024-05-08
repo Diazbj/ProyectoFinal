@@ -20,6 +20,10 @@ public class EmpleadoViewController {
     EmpleadoController empleadoControllerService;
     ObservableList<EmpleadoDto> listaEmpleadosDto = FXCollections.observableArrayList();
     EmpleadoDto empleadoSeleccionado;
+    private EventoViewController eventoViewController;
+    public void setEventoViewController(EventoViewController eventoViewController) {
+        this.eventoViewController = eventoViewController;
+    }
 
     @FXML
     private ResourceBundle resources;
@@ -61,7 +65,7 @@ public class EmpleadoViewController {
     private TextField txtCorreo;
 
     @FXML
-    private TextField txtEventos;
+    private TextField txtCodigo;
 
     @FXML
     private TextField txtNombre;
@@ -104,7 +108,7 @@ public class EmpleadoViewController {
             txtNombre.setText(empleadoSeleccionado.nombre());
             txtCedula.setText(empleadoSeleccionado.cedula());
             txtCorreo.setText(empleadoSeleccionado.correo());
-            txtEventos.setText(empleadoSeleccionado.evento());
+            txtCodigo.setText(empleadoSeleccionado.evento());
         }
     }
 
@@ -114,7 +118,7 @@ public class EmpleadoViewController {
         txtNombre.setText("Ingrese el nombre");
         txtCedula.setText("Ingrese la cedula");
         txtCorreo.setText("Ingrese el correo");
-        txtEventos.setText("Ingrese el codigo de el evento asignado");
+        txtCodigo.setText("Ingrese el codigo de el evento asignado");
     }
 
     @FXML
@@ -135,7 +139,7 @@ public class EmpleadoViewController {
         EmpleadoDto empleadoDto = construirEmpleadoDto();
 
         if(datosValidos(empleadoDto)){
-            if(empleadoControllerService.agregarEmpleado(empleadoDto)){
+            if(empleadoControllerService.agregarEmpleado(empleadoDto)) {
                 listaEmpleadosDto.add(empleadoDto);
                 mostrarMensaje("Notificacion empleado", "Empleado creado", "El empleado se ha creado con éxito", Alert.AlertType.INFORMATION);
                 limpiarCamposEmpleado();
@@ -198,7 +202,7 @@ public class EmpleadoViewController {
                 txtNombre.getText(),
                 txtCedula.getText(),
                 txtCorreo.getText(),
-                txtEventos.getText());
+                txtCodigo.getText());
     }
 
     private void limpiarCamposEmpleado() {
@@ -206,7 +210,7 @@ public class EmpleadoViewController {
         txtNombre.setText("");
         txtCedula.setText("");
         txtCorreo.setText("");
-        txtEventos.setText("");
+        txtCodigo.setText("");
     }
 
     private boolean datosValidos(EmpleadoDto empleadoDto) {
@@ -214,9 +218,9 @@ public class EmpleadoViewController {
         if (empleadoDto.nombre() == null || empleadoDto.nombre().equals(""))
             mensaje += "El nombre es invalido \n";
         if (empleadoDto.cedula() == null || empleadoDto.cedula().equals(""))
-            mensaje += "El id es invalido \n";
+            mensaje += "El codigo es invalido \n";
         if (empleadoDto.correo() == null || empleadoDto.correo().equals(""))
-            mensaje += "El id es invalido \n";
+            mensaje += "El codigo es invalido \n";
         if (empleadoDto.evento() == null || empleadoDto.evento().equals(""))
             mensaje += "Los eventos asignados son invalidos \n";
         if(mensaje.equals("")){

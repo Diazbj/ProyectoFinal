@@ -1,8 +1,10 @@
 package co.edu.uniquindio.proyectofinal.model.services;
 
 import co.edu.uniquindio.proyectofinal.exceptions.EmpleadoException;
+import co.edu.uniquindio.proyectofinal.exceptions.EventoException;
 import co.edu.uniquindio.proyectofinal.exceptions.UsuarioException;
 import co.edu.uniquindio.proyectofinal.model.Empleado;
+import co.edu.uniquindio.proyectofinal.model.Evento;
 import co.edu.uniquindio.proyectofinal.model.Usuario;
 
 import java.util.ArrayList;
@@ -27,4 +29,13 @@ public interface IEmpresaDeEventosService {
     public ArrayList<Empleado> obtenerEmpleados();
 
     //---------------------------------------------Empleado--------------------------------------------------
+
+    //---------------------------------------------Evento--------------------------------------------------
+    public Evento crearEvento(String id, String nombre, String descripcion)throws EventoException;
+    public Boolean eliminarEvento(String id) throws EventoException;
+    boolean actualizarEvento(String idActual, Evento evento)throws EventoException;
+    public boolean verificarEventoExiste(String id)throws EventoException;
+    public Evento obtenerEvento(String id);
+    public ArrayList<Evento> obtenerEventos();
+    //---------------------------------------------Evento--------------------------------------------------
 }

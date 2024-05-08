@@ -2,19 +2,16 @@ package co.edu.uniquindio.proyectofinal.controller;
 
 import co.edu.uniquindio.proyectofinal.controller.service.IModelFactoryService;
 import co.edu.uniquindio.proyectofinal.exceptions.EmpleadoException;
-import co.edu.uniquindio.proyectofinal.exceptions.UsuarioException;
+import co.edu.uniquindio.proyectofinal.exceptions.EventoException;
 import co.edu.uniquindio.proyectofinal.mapping.dto.EmpleadoDto;
-import co.edu.uniquindio.proyectofinal.mapping.dto.UsuarioDto;
+import co.edu.uniquindio.proyectofinal.mapping.dto.EventoDto;
 import co.edu.uniquindio.proyectofinal.model.EmpresaDeEventos;
-import co.edu.uniquindio.proyectofinal.model.Usuario;
 import co.edu.uniquindio.proyectofinal.utils.EmpresaDeEventosUtils;
 import co.edu.uniquindio.proyectofinal.mapping.mappers.EmpresaDeEventosMapper;
 import co.edu.uniquindio.proyectofinal.model.*;
 import co.edu.uniquindio.proyectofinal.utils.Persistencia;
-import co.edu.uniquindio.proyectofinal.utils.EmpresaDeEventosUtils;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ModelFactoryController implements IModelFactoryService {
@@ -66,6 +63,14 @@ public class ModelFactoryController implements IModelFactoryService {
             throw new RuntimeException(e);
         }
     }
+
+    private void guardarDatosEventos(){
+        try{
+            Persistencia.guardarEventos(getEmpresaDeEventos().getListaEventos());
+        }catch (IOException e){
+            throw new RuntimeException(e);
+        }
+    }
     private void guardarRespaldo(){
         empresaDeEventos = new EmpresaDeEventos();
         Persistencia.guardarCopiaSeguridad();
@@ -83,6 +88,7 @@ public class ModelFactoryController implements IModelFactoryService {
     private void salvarDatosPrueba() {
         try {
             Persistencia.guardarEmpleados(getEmpresaDeEventos().getListaEmpleados());
+            Persistencia.guardarEventos(getEmpresaDeEventos().getListaEventos());
            // Persistencia.guardarClientes(getBanco().getListaClientes());
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -207,6 +213,68 @@ public class ModelFactoryController implements IModelFactoryService {
     }
 
     //---------------------------------------------Empleado--------------------------------------------------
+
+    //---------------------------------------------Evento--------------------------------------------------
+
+    @Override
+    public List<EventoDto> obtenerEventos() {
+        return mapper.getEventoDto(empresaDeEventos.getListaEventos());
+    }
+
+    @Override
+    public boolean agregarEvento(EventoDto eventoDto) {
+        try{
+            if (!empresaDeEventos.verificarEventoExiste(eventoDto.codigo())){
+                Evento evento = mapper.eventoDtoToEvento(eventoDto);
+                getEmpresaDeEventos().agregarEvento(evento);
+
+            }
+            Persistencia.guardaRegistroLog("Agregar evento", 1, "se agrego el evento");
+            guardarResourceXML();
+            guardarResourceBinario();
+//            guardarDatosEventos();
+            return true;
+        }catch (EventoException e){
+            e.getMessage();
+            Persistencia.guardaRegistroLog(e.getMessage(), 3, "fallo al agregar evento");
+            return false;
+        }
+    }
+
+    @Override
+    public boolean eliminarEventos(String codigo) {
+        boolean flagExiste = false;
+        try{
+            flagExiste = getEmpresaDeEventos().eliminarEvento(codigo);
+            guardarResourceXML();
+            guardarResourceBinario();
+//            guardarDatosEventos();
+            Persistencia.guardaRegistroLog("Eliminar evento", 1 , "se elimino un evento");
+        }catch (EventoException e){
+            e.printStackTrace();
+            Persistencia.guardaRegistroLog(e.getMessage(), 3 , "fallo al eliminar evento");
+        }
+        return flagExiste;
+    }
+
+    @Override
+    public boolean actualizarEventos(String idActual, EventoDto eventoDto) {
+        try{
+            Evento evento = mapper.eventoDtoToEvento(eventoDto);
+            getEmpresaDeEventos().actualizarEvento(idActual, evento);
+            guardarResourceXML();
+            guardarResourceBinario();
+//            guardarDatosEventos();
+            Persistencia.guardaRegistroLog("Actualizar evento", 1, "se actualizo el evento");
+            return true;
+        }catch (EventoException e){
+            e.printStackTrace();
+            Persistencia.guardaRegistroLog(e.getMessage(), 3, "fallo al actualizar el evento");
+            return false;
+        }
+    }
+
+    //---------------------------------------------Evento--------------------------------------------------
 
     private void cargarResourceXML() {
         empresaDeEventos = Persistencia.cargarRecursoEmpresaDeEventosXML();

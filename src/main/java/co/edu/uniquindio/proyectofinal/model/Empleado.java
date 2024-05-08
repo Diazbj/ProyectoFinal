@@ -2,11 +2,12 @@ package co.edu.uniquindio.proyectofinal.model;
 
 import co.edu.uniquindio.proyectofinal.exceptions.EmpleadoException;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Empleado extends Persona {
+public class Empleado extends Persona implements Serializable {
 
-
+    private static final long serialVersionUID = 1L;
     private String evento;
     ArrayList<Evento> EventosAsignados=new ArrayList<>();
 
