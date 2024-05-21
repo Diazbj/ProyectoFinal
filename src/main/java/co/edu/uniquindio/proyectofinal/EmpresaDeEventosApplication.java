@@ -2,6 +2,7 @@ package co.edu.uniquindio.proyectofinal;
 
 import co.edu.uniquindio.proyectofinal.mapping.mappers.EmpresaDeEventosMapper;
 import co.edu.uniquindio.proyectofinal.viewController.EmpresaDeEventosViewController;
+import co.edu.uniquindio.proyectofinal.viewController.LoginViewController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -18,20 +19,19 @@ public class EmpresaDeEventosApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         this.primaryStage = stage;
-        this.primaryStage.setTitle("Empresa De Eventos");
+        this.primaryStage.setTitle("Login");
         mostrarVentanaPrincipal();
     }
 
     private void mostrarVentanaPrincipal() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(EmpresaDeEventosApplication.class.getResource("EmpresaDeEventosView.fxml"));
-            AnchorPane rootLayout = (AnchorPane) loader.load();
-            EmpresaDeEventosViewController empresaDeEventosViewController = loader.getController();
-//            empresaDeEventosViewController.setAplicacion(this);
-            // Show the scene containing the root layout.
+            loader.setLocation(EmpresaDeEventosApplication.class.getResource("Login.fxml"));
+            AnchorPane rootLayout = loader.load();
+            LoginViewController loginViewController = loader.getController();
+            // loginViewController.setAplicacion(this); // Si necesitas pasar una referencia de la aplicación al controlador
+
             Scene scene = new Scene(rootLayout);
-            //scene.getStylesheets().add(getClass().getResource("estilos.css").toExternalForm());
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException e) {

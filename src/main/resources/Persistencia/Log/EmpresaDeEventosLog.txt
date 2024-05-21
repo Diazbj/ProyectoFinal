@@ -174,3 +174,21 @@ may 05, 2024 5:55:06 P. M. co.edu.uniquindio.proyectofinal.utils.ArchivoUtil g
 INFO: se elimino el empleado,Eliminar empleado,2024-05-05
 may 05, 2024 5:55:11 P. M. co.edu.uniquindio.proyectofinal.utils.ArchivoUtil guardarRegistroLog
 INFO: inicioSesión,Inicio de sesión,2024-05-05
+may 07, 2024 7:15:35 P. M. co.edu.uniquindio.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-07
+may 07, 2024 7:16:21 P. M. co.edu.uniquindio.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-07
+may 07, 2024 7:16:32 P. M. co.edu.uniquindio.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFO: se actualizo el evento,Actualizar evento,2024-05-07
+may 07, 2024 7:47:42 P. M. co.edu.uniquindio.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-07
+may 07, 2024 7:48:56 P. M. co.edu.uniquindio.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFO: se actualizo el evento,Actualizar evento,2024-05-07
+may 07, 2024 7:49:02 P. M. co.edu.uniquindio.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFO: se agrego un empleado,Agregar empleado,2024-05-07
+may 20, 2024 4:29:58 P. M. co.edu.uniquindio.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-20
+may 20, 2024 5:54:15 P. M. co.edu.uniquindio.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-20
+may 20, 2024 6:02:00 P. M. co.edu.uniquindio.proyectofinal.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-20

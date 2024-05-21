@@ -85,22 +85,6 @@
    <void method="add">
     <object class="co.edu.uniquindio.proyectofinal.model.Empleado">
      <void property="cedula">
-      <string>787877</string>
-     </void>
-     <void property="correo">
-      <string>Albert@gmail.com</string>
-     </void>
-     <void property="evento">
-      <string>04</string>
-     </void>
-     <void property="nombre">
-      <string>alexander</string>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="co.edu.uniquindio.proyectofinal.model.Empleado">
-     <void property="cedula">
       <string>4545</string>
      </void>
      <void property="correo">
@@ -111,6 +95,22 @@
      </void>
      <void property="nombre">
       <string>ale</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.proyectofinal.model.Empleado">
+     <void property="cedula">
+      <string>5454254</string>
+     </void>
+     <void property="correo">
+      <string>gonza@gmail.com</string>
+     </void>
+     <void property="evento">
+      <string>03</string>
+     </void>
+     <void property="nombre">
+      <string>Gonzalo</string>
      </void>
     </object>
    </void>
@@ -173,6 +173,28 @@
      </void>
      <void property="descripcion">
       <string>Grado</string>
+     </void>
+     <void property="fecha">
+      <string>2025-05-15</string>
+     </void>
+     <void property="nombre">
+      <string>Fiesta</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.edu.uniquindio.proyectofinal.model.Evento">
+     <void property="capacidadMax">
+      <int>50</int>
+     </void>
+     <void property="cedulaEmpleado">
+      <string>4545</string>
+     </void>
+     <void property="codigo">
+      <string>52</string>
+     </void>
+     <void property="descripcion">
+      <string>matrimonio</string>
      </void>
      <void property="fecha">
       <string>2025-05-15</string>
